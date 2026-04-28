@@ -8,6 +8,7 @@ F:\2026-I\CONSTRUCCION DE SOFTWARE\ConstruSoftTicket\backend\ConstruSoftTickeT.A
 F:\2026-I\CONSTRUCCION DE SOFTWARE\ConstruSoftTicket\backend\ConstruSoftTickeT.Application\obj\Debug\net10.0\ConstruSoftTickeT.Application.AssemblyInfoInputs.cache
 F:\2026-I\CONSTRUCCION DE SOFTWARE\ConstruSoftTicket\backend\ConstruSoftTickeT.Application\obj\Debug\net10.0\ConstruSoftTickeT.Application.AssemblyInfo.cs
 F:\2026-I\CONSTRUCCION DE SOFTWARE\ConstruSoftTicket\backend\ConstruSoftTickeT.Application\obj\Debug\net10.0\ConstruSoftTickeT.Application.csproj.CoreCompileInputs.cache
+F:\2026-I\CONSTRUCCION DE SOFTWARE\ConstruSoftTicket\backend\ConstruSoftTickeT.Application\obj\Debug\net10.0\ConstruSoftTickeT.Application.sourcelink.json
 F:\2026-I\CONSTRUCCION DE SOFTWARE\ConstruSoftTicket\backend\ConstruSoftTickeT.Application\obj\Debug\net10.0\ConstruSoftTickeT.Application.dll
 F:\2026-I\CONSTRUCCION DE SOFTWARE\ConstruSoftTicket\backend\ConstruSoftTickeT.Application\obj\Debug\net10.0\refint\ConstruSoftTickeT.Application.dll
 F:\2026-I\CONSTRUCCION DE SOFTWARE\ConstruSoftTicket\backend\ConstruSoftTickeT.Application\obj\Debug\net10.0\ConstruSoftTickeT.Application.pdb

@@ -16,8 +16,9 @@
       },
       "ConstruSoftTicket.Domain/1.0.0": {
         "runtime": {
-          "ConstruSoftTickeT.Domain.dll": {
-            "fileVersion": "0.0.0.0"
+          "ConstruSoftTicket.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       }

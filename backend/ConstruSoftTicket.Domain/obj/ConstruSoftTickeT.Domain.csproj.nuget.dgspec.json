@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\ConstruSoftTickeT.Domain.csproj": {}
+    "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj": {}
   },
   "projects": {
-    "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\ConstruSoftTickeT.Domain.csproj": {
+    "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\ConstruSoftTickeT.Domain.csproj",
-        "projectName": "ConstruSoftTickeT.Domain",
-        "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\ConstruSoftTickeT.Domain.csproj",
+        "projectUniqueName": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj",
+        "projectName": "ConstruSoftTicket.Domain",
+        "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj",
         "packagesPath": "C:\\Users\\JESUS\\.nuget\\packages\\",
-        "outputPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\obj\\",
+        "outputPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\JESUS\\AppData\\Roaming\\NuGet\\NuGet.Config"
