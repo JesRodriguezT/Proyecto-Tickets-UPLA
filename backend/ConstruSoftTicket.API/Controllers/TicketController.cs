@@ -8,7 +8,6 @@ namespace ConstruSoftTicket.API.Controllers;
 [Route("api/[controller]")]
 public class TicketController : ControllerBase
 {
-    // Usamos el estándar de C# con guion bajo (_) para variables privadas
     private readonly ITicketService _ticketService;
 
     public TicketController(ITicketService ticketService)
@@ -17,18 +16,23 @@ public class TicketController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Crear([FromBody] CreateTicketDto dto)
+    public IActionResult Crear([FromBody] CreateTicketDto dto)
     {
-        // Ahora sí coincide con la variable declarada arriba
-        await _ticketService.CreateTicketAsync(dto);
+        // Cambiado a CrearTicket (sin await porque es void)
+        _ticketService.CrearTicket(dto); 
         
         return Ok(new { mensaje = "Ticket registrado correctamente." });
     }
 
+    // El método Listar se comenta o elimina temporalmente 
+    // porque tu interfaz ITicketService aún no tiene definido "Listar"
+    /*
     [HttpGet]
-    public async Task<IActionResult> Listar()
+    public IActionResult Listar()
     {
-        var tickets = await _ticketService.GetAllTicketsAsync();
-        return Ok(tickets);
+        // var tickets = _ticketService.ListarTickets(); 
+        // return Ok(tickets);
+        return Ok();
     }
+    */
 }

@@ -1,13 +1,10 @@
-using System;
+namespace ConstruSoftTicket.Domain.Entities;
 
-namespace ConstruSoftTicket.Domain.Entities
+public class Ticket
 {
-    public class Ticket
-    {
-        public int Id { get; set; }
-        public string Title { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
-        public string Status { get; set; } = "Open";
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-    }
+    public Guid Id { get; set; } // Cambia int por Guid
+    public string Titulo { get; set; } = string.Empty;
+    public string Descripcion { get; set; } = string.Empty;
+    public DateTime FechaCreacion { get; set; }
+    public string Estado { get; set; } = "Abierto";
 }

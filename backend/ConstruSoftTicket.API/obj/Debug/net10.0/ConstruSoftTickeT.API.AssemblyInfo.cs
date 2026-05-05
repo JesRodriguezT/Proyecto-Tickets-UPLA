@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConstruSoftTickeT.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0e42190cafe8090b335cc58773fca0cff055650")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea70589742cea46daab7ce215813d42cc47a317e")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConstruSoftTickeT.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConstruSoftTickeT.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,32 +1,21 @@
 using ConstruSoftTicket.Application.Interfaces;
 using ConstruSoftTicket.Domain.Entities;
-using ConstruSoftTicket.Infrastructure.Persistence;
-using Microsoft.EntityFrameworkCore;
+using ConstruSoftTicket.Infrastructure.Data; // Asegúrate que diga .Data
 
 namespace ConstruSoftTicket.Infrastructure.Repositories;
 
 public class TicketRepository : ITicketRepository
 {
-    private readonly ApplicationDbContext _context;
+    private readonly AppDbContext context; // Debe decir AppDbContext
 
-    public TicketRepository(ApplicationDbContext context)
+    public TicketRepository(AppDbContext context)
     {
-        _context = context;
+        this.context = context;
     }
 
-    public async Task<IEnumerable<Ticket>> GetAllAsync() 
+    public void Add(Ticket ticket) // Asegúrate que el método se llame Add
     {
-        return await _context.Tickets.ToListAsync();
-    }
-
-    public async Task<Ticket> GetByIdAsync(int id) 
-    {
-        return await _context.Tickets.FindAsync(id);
-    }
-
-    public async Task AddAsync(Ticket ticket)
-    {
-        await _context.Tickets.AddAsync(ticket);
-        await _context.SaveChangesAsync();
+        context.Tickets.Add(ticket);
+        context.SaveChanges();
     }
 }

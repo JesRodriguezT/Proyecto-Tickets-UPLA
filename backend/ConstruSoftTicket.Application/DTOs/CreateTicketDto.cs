@@ -1,8 +1,7 @@
-namespace ConstruSoftTicket.Application.DTOs
+namespace ConstruSoftTicket.Application.DTOs;
+
+public class CreateTicketDto
 {
-    public class CreateTicketDto
-    {
-        public string Title { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
-    }
+    public string Titulo { get; set; } = string.Empty; // Debe ser Titulo, no Title
+    public string Descripcion { get; set; } = string.Empty; // Debe ser Descripcion
 }
