@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Application\\ConstruSoftTicket.Application.csproj": {}
+    "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Application\\ConstruSoftTickeT.Application.csproj": {}
   },
   "projects": {
-    "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Application\\ConstruSoftTicket.Application.csproj": {
+    "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Application\\ConstruSoftTickeT.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Application\\ConstruSoftTicket.Application.csproj",
-        "projectName": "ConstruSoftTicket.Application",
-        "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Application\\ConstruSoftTicket.Application.csproj",
+        "projectUniqueName": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Application\\ConstruSoftTickeT.Application.csproj",
+        "projectName": "ConstruSoftTickeT.Application",
+        "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Application\\ConstruSoftTickeT.Application.csproj",
         "packagesPath": "C:\\Users\\JESUS\\.nuget\\packages\\",
-        "outputPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Application\\obj\\",
+        "outputPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\JESUS\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj": {
-                "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj"
+              "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\ConstruSoftTickeT.Domain.csproj": {
+                "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\ConstruSoftTickeT.Domain.csproj"
               }
             }
           }
@@ -341,14 +341,14 @@
         }
       }
     },
-    "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj": {
+    "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\ConstruSoftTickeT.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj",
-        "projectName": "ConstruSoftTicket.Domain",
-        "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj",
+        "projectUniqueName": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\ConstruSoftTickeT.Domain.csproj",
+        "projectName": "ConstruSoftTickeT.Domain",
+        "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\ConstruSoftTickeT.Domain.csproj",
         "packagesPath": "C:\\Users\\JESUS\\.nuget\\packages\\",
-        "outputPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\obj\\",
+        "outputPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\JESUS\\AppData\\Roaming\\NuGet\\NuGet.Config"

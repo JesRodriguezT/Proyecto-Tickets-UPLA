@@ -812,27 +812,27 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "ConstruSoftTicket.Application/1.0.0": {
+      "ConstruSoftTickeT.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "ConstruSoftTicket.Domain": "1.0.0"
+          "ConstruSoftTickeT.Domain": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstruSoftTicket.Application.dll": {}
+          "bin/placeholder/ConstruSoftTickeT.Application.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstruSoftTicket.Application.dll": {}
+          "bin/placeholder/ConstruSoftTickeT.Application.dll": {}
         }
       },
-      "ConstruSoftTicket.Domain/1.0.0": {
+      "ConstruSoftTickeT.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
-          "bin/placeholder/ConstruSoftTicket.Domain.dll": {}
+          "bin/placeholder/ConstruSoftTickeT.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstruSoftTicket.Domain.dll": {}
+          "bin/placeholder/ConstruSoftTickeT.Domain.dll": {}
         }
       }
     }
@@ -2514,21 +2514,21 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "ConstruSoftTicket.Application/1.0.0": {
+    "ConstruSoftTickeT.Application/1.0.0": {
       "type": "project",
-      "path": "../ConstruSoftTicket.Application/ConstruSoftTicket.Application.csproj",
-      "msbuildProject": "../ConstruSoftTicket.Application/ConstruSoftTicket.Application.csproj"
+      "path": "../ConstruSoftTickeT.Application/ConstruSoftTickeT.Application.csproj",
+      "msbuildProject": "../ConstruSoftTickeT.Application/ConstruSoftTickeT.Application.csproj"
     },
-    "ConstruSoftTicket.Domain/1.0.0": {
+    "ConstruSoftTickeT.Domain/1.0.0": {
       "type": "project",
-      "path": "../ConstruSoftTicket.Domain/ConstruSoftTicket.Domain.csproj",
-      "msbuildProject": "../ConstruSoftTicket.Domain/ConstruSoftTicket.Domain.csproj"
+      "path": "../ConstruSoftTickeT.Domain/ConstruSoftTickeT.Domain.csproj",
+      "msbuildProject": "../ConstruSoftTickeT.Domain/ConstruSoftTickeT.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "ConstruSoftTicket.Application >= 1.0.0",
-      "ConstruSoftTicket.Domain >= 1.0.0",
+      "ConstruSoftTickeT.Application >= 1.0.0",
+      "ConstruSoftTickeT.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.0",
       "Microsoft.EntityFrameworkCore.Relational >= 9.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.0",
@@ -2560,11 +2560,11 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Application\\ConstruSoftTicket.Application.csproj": {
-              "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Application\\ConstruSoftTicket.Application.csproj"
+            "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Application\\ConstruSoftTickeT.Application.csproj": {
+              "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Application\\ConstruSoftTickeT.Application.csproj"
             },
-            "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj": {
-              "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj"
+            "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\ConstruSoftTickeT.Domain.csproj": {
+              "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\ConstruSoftTickeT.Domain.csproj"
             }
           }
         }
