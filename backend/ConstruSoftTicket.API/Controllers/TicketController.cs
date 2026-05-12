@@ -16,23 +16,17 @@ public class TicketController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult Crear([FromBody] CreateTicketDto dto)
+public IActionResult Crear([FromBody] CreateTicketDto dto)
+{
+    // Esta es la validación integral que pide el manual
+    if (!ModelState.IsValid)
     {
-        // Cambiado a CrearTicket (sin await porque es void)
-        _ticketService.CrearTicket(dto); 
-        
-        return Ok(new { mensaje = "Ticket registrado correctamente." });
+        return BadRequest(ModelState); // Si el título es muy corto, aquí rebota
     }
 
-    // El método Listar se comenta o elimina temporalmente 
-    // porque tu interfaz ITicketService aún no tiene definido "Listar"
-    /*
-    [HttpGet]
-    public IActionResult Listar()
-    {
-        // var tickets = _ticketService.ListarTickets(); 
-        // return Ok(tickets);
-        return Ok();
-    }
-    */
+    _ticketService.CrearTicket(dto);
+    return Ok(new { mensaje = "Ticket registrado correctamente." });
+}
+
+    
 }

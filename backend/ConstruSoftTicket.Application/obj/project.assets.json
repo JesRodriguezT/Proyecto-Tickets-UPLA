@@ -2,28 +2,28 @@
   "version": 3,
   "targets": {
     "net10.0": {
-      "ConstruSoftTickeT.Domain/1.0.0": {
+      "ConstruSoftTicket.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
-          "bin/placeholder/ConstruSoftTickeT.Domain.dll": {}
+          "bin/placeholder/ConstruSoftTicket.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstruSoftTickeT.Domain.dll": {}
+          "bin/placeholder/ConstruSoftTicket.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "ConstruSoftTickeT.Domain/1.0.0": {
+    "ConstruSoftTicket.Domain/1.0.0": {
       "type": "project",
-      "path": "../ConstruSoftTickeT.Domain/ConstruSoftTickeT.Domain.csproj",
-      "msbuildProject": "../ConstruSoftTickeT.Domain/ConstruSoftTickeT.Domain.csproj"
+      "path": "../ConstruSoftTicket.Domain/ConstruSoftTicket.Domain.csproj",
+      "msbuildProject": "../ConstruSoftTicket.Domain/ConstruSoftTicket.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "ConstruSoftTickeT.Domain >= 1.0.0"
+      "ConstruSoftTicket.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Application\\ConstruSoftTickeT.Application.csproj",
-      "projectName": "ConstruSoftTickeT.Application",
-      "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Application\\ConstruSoftTickeT.Application.csproj",
+      "projectUniqueName": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Application\\ConstruSoftTicket.Application.csproj",
+      "projectName": "ConstruSoftTicket.Application",
+      "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Application\\ConstruSoftTicket.Application.csproj",
       "packagesPath": "C:\\Users\\JESUS\\.nuget\\packages\\",
-      "outputPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Application\\obj\\",
+      "outputPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\JESUS\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -51,8 +51,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\ConstruSoftTickeT.Domain.csproj": {
-              "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Domain\\ConstruSoftTickeT.Domain.csproj"
+            "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj": {
+              "projectPath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj"
             }
           }
         }

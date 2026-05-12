@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5OSjonJRqiw=",
+  "dgSpecHash": "5MgsoHNRI2I=",
   "success": true,
-  "projectFilePath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTickeT.Infrastructure\\ConstruSoftTickeT.Infrastructure.csproj",
+  "projectFilePath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Infrastructure\\ConstruSoftTicket.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JESUS\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\JESUS\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
