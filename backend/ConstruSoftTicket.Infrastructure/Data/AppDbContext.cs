@@ -1,34 +1,44 @@
-using ConstruSoftTicket.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using ConstruSoftTicket.Domain.Entities;
+using ConstruSoftTicket.Application.Interfaces;
 
 namespace ConstruSoftTicket.Infrastructure.Data;
 
-public class AppDbContext : DbContext
+public class AppDbContext : DbContext, IApplicationDbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
 
-    public DbSet<Ticket> Tickets => Set<Ticket>();
+    public DbSet<Ticket> Tickets { get; set; }
+    public DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
 
-        // Configuramos el mapeo exacto para evitar errores de nombres en PostgreSQL
-        modelBuilder.Entity<Ticket>(entity =>
+        // Mapeo exacto según las mayúsculas de tu pgAdmin
+        modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.ToTable("Tickets"); // Nombre de la tabla
+            entity.ToTable("Usuarios"); // 'U' mayúscula
             entity.HasKey(e => e.Id);
             
-            entity.Property(e => e.Titulo)
-                  .IsRequired();
-
-            entity.Property(e => e.Descripcion)
-                  .IsRequired(); // Esto asegura que busque 'Descripcion' exactamente
-
-            entity.Property(e => e.FechaCreacion);
-            entity.Property(e => e.Estado);
+            entity.Property(e => e.Id)
+                  .HasColumnName("Id"); // 'I' mayúscula
+                  
+            entity.Property(e => e.Username)
+                  .HasColumnName("Username"); // 'U' mayúscula
+            
+            entity.Property(e => e.PasswordHash)
+                  .HasColumnName("PasswordHash"); // 'P' y 'H' mayúsculas, sin guion bajo
+            
+            entity.Property(e => e.Rol)
+                  .HasColumnName("Rol"); // 'R' mayúscula
         });
+    }
+
+    public override int SaveChanges()
+    {
+        return base.SaveChanges();
     }
 }

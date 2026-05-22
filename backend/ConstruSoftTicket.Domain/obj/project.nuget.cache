@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "n+YELHT1msQ=",
+  "dgSpecHash": "PL6bIjaC6nI=",
   "success": true,
-  "projectFilePath": "F:\\2026-I\\CONSTRUCCION DE SOFTWARE\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Proyectos\\ConstruSoftTicket\\backend\\ConstruSoftTicket.Domain\\ConstruSoftTicket.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\JESUS\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.26\\microsoft.netcore.app.ref.8.0.26.nupkg.sha512",
+    "C:\\Users\\JESUS\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.26\\microsoft.windowsdesktop.app.ref.8.0.26.nupkg.sha512",
+    "C:\\Users\\JESUS\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.26\\microsoft.aspnetcore.app.ref.8.0.26.nupkg.sha512"
+  ],
   "logs": []
 }

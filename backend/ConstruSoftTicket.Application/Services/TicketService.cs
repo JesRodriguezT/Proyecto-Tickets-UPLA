@@ -1,6 +1,10 @@
 using ConstruSoftTicket.Application.DTOs;
 using ConstruSoftTicket.Application.Interfaces;
 using ConstruSoftTicket.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ConstruSoftTicket.Application.Services;
 
@@ -13,19 +17,28 @@ public class TicketService : ITicketService
         _repository = repository;
     }
 
-    public void CrearTicket(CreateTicketDto dto)
+    // Operaciones I/O de base de datos siempre deben usar async/await
+    public async Task CrearTicketAsync(CreateTicketDto dto)
     {
-        // Creamos la entidad del dominio a partir del DTO
-        var ticket = new Ticket
-        {
-            Id = Guid.NewGuid(), // Genera un identificador único
-            Titulo = dto.Titulo, // Coincide con la propiedad del DTO
-            Descripcion = dto.Descripcion, // Coincide con la propiedad del DTO
-            FechaCreacion = DateTime.UtcNow,
-            Estado = "Abierto" // Estado inicial por defecto
-        };
+        // La lógica de creación y validación ahora está encapsulada en la propia entidad de dominio.
+        var ticket = new Ticket(dto.Titulo, dto.Descripcion);
 
         // Guardamos en el repositorio (Capa de Infraestructura)
-        _repository.Add(ticket);
+        await _repository.AddAsync(ticket); 
+    }
+
+    public async Task<IEnumerable<TicketDto>> GetAllTicketsAsync()
+    {
+        var tickets = await _repository.GetAllAsync();
+
+        // Mapeamos la entidad de dominio a un DTO para no exponer la entidad fuera de la capa de aplicación/dominio.
+        return tickets.Select(ticket => new TicketDto
+        {
+            Id = ticket.Id,
+            Titulo = ticket.Titulo,
+            Descripcion = ticket.Descripcion,
+            FechaCreacion = ticket.FechaCreacion,
+            Estado = ticket.Estado
+        });
     }
 }

@@ -1,6 +1,9 @@
-using ConstruSoftTicket.Application.DTOs;
-using ConstruSoftTicket.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using ConstruSoftTicket.Application.Interfaces;
+using ConstruSoftTicket.Application.DTOs;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace ConstruSoftTicket.API.Controllers;
 
@@ -16,17 +19,23 @@ public class TicketController : ControllerBase
     }
 
     [HttpPost]
-public IActionResult Crear([FromBody] CreateTicketDto dto)
-{
-    // Esta es la validación integral que pide el manual
-    if (!ModelState.IsValid)
+    [Authorize] 
+    public async Task<IActionResult> Crear([FromBody] CreateTicketDto dto)
     {
-        return BadRequest(ModelState); // Si el título es muy corto, aquí rebota
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        await _ticketService.CrearTicketAsync(dto);
+        return Ok(new { mensaje = "Ticket registrado correctamente." });
     }
 
-    _ticketService.CrearTicket(dto);
-    return Ok(new { mensaje = "Ticket registrado correctamente." });
-}
-
-    
+    [HttpGet]
+    [Authorize] 
+    public async Task<IActionResult> GetAll()
+    {
+        var tickets = await _ticketService.GetAllTicketsAsync();
+        return Ok(tickets);
+    }
 }

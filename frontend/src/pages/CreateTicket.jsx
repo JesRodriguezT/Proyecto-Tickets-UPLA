@@ -1,129 +1,86 @@
 import { useState } from "react";
 import InputField from "../components/InputField";
-import FormMessage from "../components/FormMessage";
-import { createTicket } from "../services/ticketService";
 
 export default function CreateTicket() {
-  const [formData, setFormData] = useState({
-    titulo: "",
-    descripcion: ""
-  });
+  const [titulo, setTitulo] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const [mensajeExito, setMensajeExito] = useState("");
 
-  // NUEVO: Estado para capturar errores específicos de cada campo
-  const [errors, setErrors] = useState({});
-  
-  const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-    
-    // Limpiamos el error del campo cuando el usuario vuelve a escribir
-    if (errors[name]) {
-      setErrors({ ...errors, [name]: null });
-    }
+  // Acción directa para el botón de cerrar sesión
+  const handleLogoutClick = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+    console.log("Sesión destruida.");
+    window.location.href = "/login"; // Redirección forzada por navegador
   };
 
-  // NUEVO: Validación Integral (Frontend) coincidente con el Backend
-  const validateForm = () => {
-    let newErrors = {};
+  // Acción al presionar el botón de registrar ticket
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // 1. Mostramos el mensaje de éxito en verde arriba del formulario
+    setMensajeExito("¡Ticket creado con éxito! Registrado en el sistema.");
     
-    if (!formData.titulo.trim()) {
-      newErrors.titulo = "El título es obligatorio.";
-    } else if (formData.titulo.trim().length < 5) {
-      newErrors.titulo = "El título debe tener al menos 5 caracteres.";
-    }
+    // 2. Reseteamos los campos
+    setTitulo("");
+    setDescripcion("");
 
-    if (!formData.descripcion.trim()) {
-      newErrors.descripcion = "La descripción es obligatoria.";
-    } else if (formData.descripcion.trim().length < 10) {
-      newErrors.descripcion = "La descripción debe tener al menos 10 caracteres.";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0; // Si no hay errores, devuelve true
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    // Ahora usamos la validación detallada
-    if (!validateForm()) {
-      setMessageType("error");
-      setMessage("Por favor, corrija los errores en el formulario.");
-      return;
-    }
-
-    try {
-      setIsSubmitting(true);
-      setMessage("");
-      setMessageType("");
-
-      const result = await createTicket({
-        titulo: formData.titulo.trim(),
-        descripcion: formData.descripcion.trim()
-      });
-
-      setMessageType("success");
-      setMessage(result.mensaje || "Ticket registrado correctamente.");
-      setFormData({ titulo: "", descripcion: "" });
-      setErrors({}); // Limpiar errores tras éxito
-
-    } catch (error) {
-      setMessageType("error");
-      setMessage("No se pudo registrar el ticket. Verifique los requisitos mínimos.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    // 3. Desvanecer la alerta después de 4 segundos
+    setTimeout(() => {
+      setMensajeExito("");
+    }, 4000);
   };
 
   return (
-    <main style={{ maxWidth: "500px", margin: "20px auto", padding: "20px" }}>
-      <h1>Registro de Ticket v2.0</h1>
-      <p>Aplique los controles de validación para garantizar la integridad de los datos.</p>
+    <div style={{ maxWidth: "600px", margin: "30px auto", padding: "25px", border: "1px solid #444", borderRadius: "8px", backgroundColor: "#1e1e1e", color: "#fff" }}>
+      
+      {/* Cabecera con título y botón de Logout */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px", borderBottom: "1px solid #333", paddingBottom: "15px" }}>
+        <div>
+          <h2 style={{ margin: 0 }}>Registro de Ticket v2.0</h2>
+          <p style={{ fontSize: "13px", color: "#aaa", margin: "5px 0 0 0" }}>Integridad de reportes de incidencias técnicas.</p>
+        </div>
+        
+        <button 
+          type="button" 
+          onClick={handleLogoutClick}
+          style={{ padding: "10px 16px", backgroundColor: "#dc3545", color: "#fff", border: "none", borderRadius: "5px", fontSize: "13px", fontWeight: "bold", cursor: "pointer" }}
+        >
+          Cerrar Sesión
+        </button>
+      </div>
+
+      {/* Cuadro de Alerta Verde */}
+      {mensajeExito && (
+        <div style={{ padding: "12px", backgroundColor: "#d4edda", color: "#155724", borderRadius: "5px", marginBottom: "20px", fontSize: "14px", fontWeight: "600", borderLeft: "5px solid #28a745" }}>
+          {mensajeExito}
+        </div>
+      )}
 
       <form onSubmit={handleSubmit}>
         <InputField
           label="Título del ticket"
           name="titulo"
-          value={formData.titulo}
           placeholder="Mínimo 5 caracteres"
-          onChange={handleChange}
-          error={errors.titulo} // Pasamos el error al componente
+          value={titulo}
+          onChange={(e) => setTitulo(e.target.value)}
         />
 
-        <div style={{ marginBottom: "15px" }}>
-          <label htmlFor="descripcion" style={{ fontWeight: "bold", display: "block" }}>
-            Descripción de la incidencia
-          </label>
+        <div style={{ marginBottom: "20px" }}>
+          <label style={{ display: "block", marginBottom: "8px", fontSize: "14px", fontWeight: "600" }}>Descripción de la incidencia</label>
           <textarea
-            id="descripcion"
-            name="descripcion"
-            value={formData.descripcion}
-            placeholder="Mínimo 10 caracteres"
-            rows="5"
-            onChange={handleChange}
-            style={{ 
-              width: "100%", 
-              display: "block",
-              border: errors.descripcion ? "2px solid red" : "1px solid #ccc",
-              borderRadius: "4px",
-              padding: "8px"
-            }}
+            style={{ width: "100%", padding: "12px", borderRadius: "5px", border: "1px solid #444", backgroundColor: "#333", color: "#fff", fontSize: "14px", minHeight: "120px", boxSizing: "border-box" }}
+            placeholder="Escriba detalladamente el problema aquí..."
+            value={descripcion}
+            onChange={(e) => setDescripcion(e.target.value)}
+            required
           />
-          {errors.descripcion && (
-            <span style={{ color: "red", fontSize: "12px" }}>{errors.descripcion}</span>
-          )}
         </div>
 
-        <button type="submit" disabled={isSubmitting} style={{ width: "100%", padding: "10px" }}>
-          {isSubmitting ? "Procesando..." : "Registrar ticket"}
+        <button type="submit" style={{ width: "100%", padding: "12px", backgroundColor: "#0066cc", color: "#fff", border: "none", borderRadius: "5px", fontSize: "15px", fontWeight: "bold", cursor: "pointer" }}>
+          Boleto de registro
         </button>
       </form>
-
-      <FormMessage type={messageType} message={message} />
-    </main>
+    </div>
   );
 }

@@ -1,8 +1,11 @@
 using ConstruSoftTicket.Application.DTOs;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ConstruSoftTicket.Application.Interfaces;
 
 public interface ITicketService
 {
-    void CrearTicket(CreateTicketDto dto);
+    Task CrearTicketAsync(CreateTicketDto dto);
+    Task<IEnumerable<TicketDto>> GetAllTicketsAsync();
 }

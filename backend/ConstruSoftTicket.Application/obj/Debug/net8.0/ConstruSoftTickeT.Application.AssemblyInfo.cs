@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("ConstruSoftTickeT.Application")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ConstruSoftTicket.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("ConstruSoftTickeT.Application")]
-[assembly: System.Reflection.AssemblyTitleAttribute("ConstruSoftTickeT.Application")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0514e49cd12ec030e341cddcbb3ad2f14eabf1b8")]
+[assembly: System.Reflection.AssemblyProductAttribute("ConstruSoftTicket.Application")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ConstruSoftTicket.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

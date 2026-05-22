@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "ConstruSoftTickeT.Domain/1.0.0": {
+      "ConstruSoftTicket.Domain/1.0.0": {
         "runtime": {
-          "ConstruSoftTickeT.Domain.dll": {}
+          "ConstruSoftTicket.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "ConstruSoftTickeT.Domain/1.0.0": {
+    "ConstruSoftTicket.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
