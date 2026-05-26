@@ -59,51 +59,39 @@ const LoginRegister = () => {
     }
   };
 
-  const estilos = {
-    pantalla: { fontFamily: 'Segoe UI, sans-serif', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', backgroundColor: '#f4f6f9', margin: 0 },
-    bloque: { backgroundColor: '#ffffff', width: '100%', maxWidth: '400px', padding: '35px', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.08)' },
-    titulo: { textAlign: 'center', margin: '0 0 5px 0', color: '#1a1a1a', fontSize: '24px', fontWeight: '700' },
-    subtitulo: { textAlign: 'center', margin: '0 0 25px 0', color: '#777', fontSize: '14px' },
-    solapas: { display: 'flex', marginBottom: '25px', borderBottom: '2px solid #eef0f3' },
-    solapaBoton: (activo) => ({ flex: 1, padding: '12px', textAlign: 'center', cursor: 'pointer', fontWeight: '600', color: activo ? '#0066cc' : '#777', borderBottom: activo ? '3px solid #0066cc' : 'none' }),
-    campo: { marginBottom: '18px' },
-    label: { display: 'block', marginBottom: '6px', fontSize: '13px', fontWeight: '600', color: '#444' },
-    input: { width: '100%', padding: '10px 12px', border: '1px solid #ccd4dc', borderRadius: '5px', fontSize: '14px', boxSizing: 'border-box' },
-    select: { width: '100%', padding: '10px 12px', border: '1px solid #ccd4dc', borderRadius: '5px', fontSize: '14px', backgroundColor: '#fff', boxSizing: 'border-box' },
-    btnEnviar: { width: '100%', padding: '12px', backgroundColor: '#0066cc', color: '#fff', border: 'none', borderRadius: '5px', fontSize: '15px', fontWeight: '600', cursor: 'pointer', marginTop: '10px' },
-    msgOk: { padding: '10px', backgroundColor: '#d4edda', color: '#155724', borderRadius: '5px', fontSize: '13px', marginBottom: '15px', borderLeft: '4px solid #28a745' },
-    msgErr: { padding: '10px', backgroundColor: '#f8d7da', color: '#721c24', borderRadius: '5px', fontSize: '13px', marginBottom: '15px', borderLeft: '4px solid #dc3545' }
-  };
-
   return (
-    <div style={estilos.pantalla}>
-      <div style={estilos.bloque}>
-        <h2 style={estilos.titulo}>ConstruSoftTicket</h2>
-        <p style={estilos.subtitulo}>Sistema de Reportes Técnicos</p>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 font-sans p-4">
+      <div className="bg-white w-full max-w-md p-8 rounded-xl shadow-lg border border-gray-200">
+        <h2 className="text-center text-3xl font-bold text-gray-800 mb-1">ConstruSoftTicket</h2>
+        <p className="text-center text-gray-500 mb-8">Sistema de Reportes Técnicos</p>
 
-        <div style={estilos.solapas}>
-          <div style={estilos.solapaBoton(isLogin)} onClick={() => cambiarModo(true)}>Iniciar Sesión</div>
-          <div style={estilos.solapaBoton(!isLogin)} onClick={() => cambiarModo(false)}>Registrarse</div>
+        <div className="flex border-b-2 border-gray-200 mb-6">
+          <button onClick={() => cambiarModo(true)} className={`flex-1 py-3 text-center font-semibold transition-colors ${isLogin ? 'text-blue-600 border-b-3 border-blue-600' : 'text-gray-500 hover:text-gray-800'}`}>
+            Iniciar Sesión
+          </button>
+          <button onClick={() => cambiarModo(false)} className={`flex-1 py-3 text-center font-semibold transition-colors ${!isLogin ? 'text-blue-600 border-b-3 border-blue-600' : 'text-gray-500 hover:text-gray-800'}`}>
+            Registrarse
+          </button>
         </div>
 
-        {mensajeExito && <div style={estilos.msgOk}>{mensajeExito}</div>}
-        {mensajeError && <div style={estilos.msgErr}>{mensajeError}</div>}
+        {mensajeExito && <div className="p-3 mb-4 text-sm text-green-800 bg-green-100 border-l-4 border-green-500 rounded-md">{mensajeExito}</div>}
+        {mensajeError && <div className="p-3 mb-4 text-sm text-red-800 bg-red-100 border-l-4 border-red-500 rounded-md">{mensajeError}</div>}
 
         <form onSubmit={handleFormulario}>
-          <div style={estilos.campo}>
-            <label style={estilos.label}>Nombre de Usuario</label>
-            <input type="text" style={estilos.input} placeholder="Ej: jesus_admin" value={username} onChange={(e) => setUsername(e.target.value)} required />
+          <div className="mb-5">
+            <label className="block mb-2 text-sm font-medium text-gray-700">Nombre de Usuario</label>
+            <input type="text" className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="Ej: jesus_admin" value={username} onChange={(e) => setUsername(e.target.value)} required />
           </div>
 
-          <div style={estilos.campo}>
-            <label style={estilos.label}>Contraseña</label>
-            <input type="password" style={estilos.input} placeholder="••••••••" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <div className="mb-6">
+            <label className="block mb-2 text-sm font-medium text-gray-700">Contraseña</label>
+            <input type="password" className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="••••••••" value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
 
           {!isLogin && (
-            <div style={estilos.campo}>
-              <label style={estilos.label}>Rol de Usuario</label>
-              <select style={estilos.select} value={rol} onChange={(e) => setRol(e.target.value)}>
+            <div className="mb-6">
+              <label className="block mb-2 text-sm font-medium text-gray-700">Rol de Usuario</label>
+              <select className="w-full p-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition" value={rol} onChange={(e) => setRol(e.target.value)}>
                 <option value="Docente">Docente</option>
                 <option value="Administrador">Administrador</option>
                 <option value="Soporte Tecnico">Soporte Técnico</option>
@@ -111,7 +99,7 @@ const LoginRegister = () => {
             </div>
           )}
 
-          <button type="submit" style={estilos.btnEnviar}>
+          <button type="submit" className="w-full py-3 mt-2 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700 transition-colors disabled:bg-blue-300">
             {isLogin ? 'Ingresar al Sistema' : 'Crear Cuenta Nueva'}
           </button>
         </form>

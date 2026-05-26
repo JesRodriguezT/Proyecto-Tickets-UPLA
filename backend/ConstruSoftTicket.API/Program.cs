@@ -10,7 +10,7 @@ using ConstruSoftTicket.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. CONFIGURACIÓN DE CORS
+// 1. Configuración de CORS (Permisos para React)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirReact", policy =>
@@ -21,7 +21,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-// 2. Conexión a la Base de Datos en PostgreSQL
+// 2. Conexión a la Base de Datos PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -29,31 +29,29 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<AppDbContext>());
 builder.Services.AddScoped<IAuthService, AuthService>();
 
+// 4. Configuración de Controladores y SWAGGER (Aquí se genera el JSON)
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "ConstruSoftTicket API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "API de ConstruSoftTicket", Version = "v1" });
 });
 
 var app = builder.Build();
 
-// 4. CONFIGURACIÓN DE ENTORNO (Aquí estaba el error corregido usando 'app')
-if (app.Environment.IsDevelopment())
+// 5. Activación de Swagger SIEMPRE (Sin importar el entorno)
+app.UseSwagger();
+app.UseSwaggerUI(c => 
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c => 
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "ConstruSoftTicket API V1");
-    });
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ConstruSoftTicket API V1");
+});
 
-// Activación de políticas
+// 6. Activación de Políticas de Seguridad y Rutas
 app.UseCors("PermitirReact");
 app.UseAuthorization();
 app.MapControllers();
 
-// 5. Verificación automática de la tabla al iniciar
+// 7. Verificación de la Base de Datos al iniciar
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
@@ -61,11 +59,11 @@ using (var scope = app.Services.CreateScope())
     {
         var context = services.GetRequiredService<AppDbContext>();
         context.Database.EnsureCreated();
-        Console.WriteLine("--> Base de datos verificada: Tabla 'Usuarios' lista en pgAdmin.");
+        Console.WriteLine("--> Base de datos verificada y lista.");
     }
     catch (Exception ex)
     {
-        Console.WriteLine($"--> Alerta de conexión: {ex.Message}");
+        Console.WriteLine($"--> Alerta de conexión BD: {ex.Message}");
     }
 }
 

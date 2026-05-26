@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import Login from "./pages/Login";
 import CreateTicket from "./pages/CreateTicket";
+import Register from "./pages/Register"; // <-- 1. IMPORTAMOS EL NUEVO COMPONENTE
 
 // Componente Guardián: Verifica si el Token JWT existe
 function RutaProtegida({ children }) {
@@ -15,10 +16,13 @@ function RutaProtegida({ children }) {
 export default function App() {
   return (
     <Router>
-      <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+      <div>
         <Routes>
-          {/* Ruta Pública: Cualquiera puede ver el Login */}
+          {/* Rutas Públicas: Cualquiera puede ver el Login y el Registro */}
           <Route path="/login" element={<Login />} />
+          
+          {/* ========== 2. AGREGAMOS LA RUTA DE REGISTRO ========== */}
+          <Route path="/register" element={<Register />} />
 
           {/* Rutas Privadas: Protegidas con el Guardián de Token */}
           <Route 
