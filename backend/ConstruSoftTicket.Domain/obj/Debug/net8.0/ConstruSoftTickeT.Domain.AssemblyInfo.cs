@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConstruSoftTicket.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+193ebc41c7a7e65de62de6f9329ccdf0e8e4782d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ed2a4efe656d22cfea4091da8c1f1a9ebe7a6a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConstruSoftTicket.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConstruSoftTicket.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
